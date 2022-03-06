@@ -32,7 +32,7 @@
 * [5 使用 Tensorflow 和 Pytorch 创建模型](Creating_Models_with_TensorFlow_and_PyTorch.ipynb)
 * [6 图卷积介绍](Introduction_to_Graph_Convolutions.ipynb)
 * [7 深度分子特征](Going_Deeper_on_Molecular_Featurizations.ipynb)
-* [8 使用分离器](Working_With_Splitters.ipynb)
+* [8 使用数据拆分器](Working_With_Splitters.ipynb)
 * [9 高级模型训练](Advanced_Model_Training.ipynb)
 * [10 从实验数据创建高保真模型](Creating_a_high_fidelity_model_from_experimental_data.ipynb)
 * [11 将多任务学习应用到工作中](Putting_Multitask_Learning_to_Work.ipynb)
