@@ -399,7 +399,7 @@ class Dataset(object):
     """
     raise NotImplementedError()
 
-  def transform(self, transformer: "dc.trans.Transformer", **args) -> "Dataset":
+  def transform(self, transformer: "dc.trans.NLP", **args) -> "Dataset":
     """Construct a new dataset by applying a transformation to every sample in this dataset.
 
     The argument is a function that can be called as follows:
@@ -545,7 +545,7 @@ class Dataset(object):
                            epochs: int = 1,
                            deterministic: bool = False,
                            batch_size: Optional[int] = None):
-    """Create a torch.utils.data.IterableDataset that iterates over the data in this Dataset.
+    """Create a torch.utilities.data.IterableDataset that iterates over the data in this Dataset.
 
     Each value returned by the Dataset's iterator is a tuple of (X, y, w, id)
     containing the data for one batch, or for a single sample if batch_size is None.
@@ -564,7 +564,7 @@ class Dataset(object):
     Returns
     -------
     torch.utils.data.IterableDataset
-      `torch.utils.data.IterableDataset` that iterates over the data in
+      `torch.utilities.data.IterableDataset` that iterates over the data in
       this dataset.
 
     Note
@@ -866,7 +866,7 @@ class NumpyDataset(Dataset):
     return ((self._X[i], self._y[i], self._w[i], self._ids[i])
             for i in range(n_samples))
 
-  def transform(self, transformer: "dc.trans.Transformer",
+  def transform(self, transformer: "dc.trans.NLP",
                 **args) -> "NumpyDataset":
     """Construct a new dataset by applying a transformation to every sample in this dataset.
 
@@ -919,7 +919,7 @@ class NumpyDataset(Dataset):
                            epochs: int = 1,
                            deterministic: bool = False,
                            batch_size: Optional[int] = None):
-    """Create a torch.utils.data.IterableDataset that iterates over the data in this Dataset.
+    """Create a torch.utilities.data.IterableDataset that iterates over the data in this Dataset.
 
     Each value returned by the Dataset's iterator is a tuple of (X, y, w, id)
     containing the data for one batch, or for a single sample if batch_size is None.
@@ -938,7 +938,7 @@ class NumpyDataset(Dataset):
     Returns
     -------
     torch.utils.data.IterableDataset
-      `torch.utils.data.IterableDataset` that iterates over the data in
+      `torch.utilities.data.IterableDataset` that iterates over the data in
       this dataset.
 
     Note
@@ -1725,7 +1725,7 @@ class DiskDataset(Dataset):
     return iterate(self)
 
   def transform(self,
-                transformer: "dc.trans.Transformer",
+                transformer: "dc.trans.NLP",
                 parallel: bool = False,
                 out_dir: Optional[str] = None,
                 **args) -> "DiskDataset":
@@ -1799,7 +1799,7 @@ class DiskDataset(Dataset):
     return dataset
 
   @staticmethod
-  def _transform_shard(transformer: "dc.trans.Transformer", shard_num: int,
+  def _transform_shard(transformer: "dc.trans.NLP", shard_num: int,
                        X_file: str, y_file: str, w_file: str, ids_file: str,
                        out_dir: str, tasks: np.ndarray) -> List[Optional[str]]:
     """This is called by transform() to transform a single shard."""
@@ -1815,7 +1815,7 @@ class DiskDataset(Dataset):
                            epochs: int = 1,
                            deterministic: bool = False,
                            batch_size: Optional[int] = None):
-    """Create a torch.utils.data.IterableDataset that iterates over the data in this Dataset.
+    """Create a torch.utilities.data.IterableDataset that iterates over the data in this Dataset.
 
     Each value returned by the Dataset's iterator is a tuple of (X, y, w, id)
     containing the data for one batch, or for a single sample if batch_size is None.
@@ -1834,7 +1834,7 @@ class DiskDataset(Dataset):
     Returns
     -------
     torch.utils.data.IterableDataset
-      `torch.utils.data.IterableDataset` that iterates over the data in
+      `torch.utilities.data.IterableDataset` that iterates over the data in
       this dataset.
 
     Note
@@ -2820,7 +2820,7 @@ class ImageDataset(Dataset):
 
   def transform(
       self,
-      transformer: "dc.trans.Transformer",
+      transformer: "dc.trans.NLP",
       **args,
   ) -> "NumpyDataset":
     """Construct a new dataset by applying a transformation to every sample in this dataset.
@@ -2881,7 +2881,7 @@ class ImageDataset(Dataset):
                            epochs: int = 1,
                            deterministic: bool = False,
                            batch_size: Optional[int] = None):
-    """Create a torch.utils.data.IterableDataset that iterates over the data in this Dataset.
+    """Create a torch.utilities.data.IterableDataset that iterates over the data in this Dataset.
 
     Each value returned by the Dataset's iterator is a tuple of (X, y, w, id)
     containing the data for one batch, or for a single sample if batch_size is None.
@@ -2900,7 +2900,7 @@ class ImageDataset(Dataset):
     Returns
     -------
     torch.utils.data.IterableDataset
-      `torch.utils.data.IterableDataset` that iterates over the data in
+      `torch.utilities.data.IterableDataset` that iterates over the data in
       this dataset.
 
     Note

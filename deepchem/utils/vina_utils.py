@@ -16,7 +16,7 @@ def deprecated(func):
   def new_func(*args, **kwargs):
     warnings.simplefilter('always', DeprecationWarning)  # turn off filter
     warnings.warn(
-        "Call to deprecated function {}. Please use the corresponding function in deepchem.utils.docking_utils.".
+        "Call to deprecated function {}. Please use the corresponding function in deepchem.utilities.docking_utils.".
         format(func.__name__),
         category=DeprecationWarning,
         stacklevel=2)

@@ -78,7 +78,7 @@ def load_mydataset(
   featurizer : allowed featurizers for this dataset
     A featurizer that inherits from deepchem.feat.Featurizer.
   transformers : List of allowed transformers for this dataset
-    A transformer that inherits from deepchem.trans.Transformer.
+    A transformer that inherits from deepchem.trans.NLP.
   splitter : allowed splitters for this dataset
     A splitter that inherits from deepchem.splits.splitters.Splitter.
   reload : bool (default True)
@@ -106,7 +106,7 @@ def load_mydataset(
       train, validation, test splits of data as
       ``deepchem.data.datasets.Dataset`` instances.
     transformers : list
-      ``deepchem.trans.transformers.Transformer`` instances applied
+      ``deepchem.trans.transformers.NLP`` instances applied
       to dataset.
 
   References

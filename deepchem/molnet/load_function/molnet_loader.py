@@ -24,20 +24,20 @@ class TransformerGenerator(object):
 
     Parameters
     ----------
-    transformer_class: Type[Transformer]
-      the class of Transformer to create
+    transformer_class: Type[NLP]
+      the class of NLP to create
     kwargs:
-      any additional arguments are passed to the Transformer's constructor
+      any additional arguments are passed to the NLP's constructor
     """
     self.transformer_class = transformer_class
     self.kwargs = kwargs
 
   def create_transformer(self, dataset: Dataset) -> dc.trans.Transformer:
-    """Construct a Transformer for a Dataset."""
+    """Construct a NLP for a Dataset."""
     return self.transformer_class(dataset=dataset, **self.kwargs)
 
   def get_directory_name(self) -> str:
-    """Get a name for directories on disk describing this Transformer."""
+    """Get a name for directories on disk describing this NLP."""
     name = self.transformer_class.__name__
     for key, value in self.kwargs.items():
       if isinstance(value, list):

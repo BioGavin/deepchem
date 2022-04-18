@@ -122,7 +122,7 @@ for split in splits:
       valid_scores = valid_evaluator.compute_model_performance(metric)
       valid_scores = {"%s_valid" % k: v for k, v in valid_scores.items()}
       param.update(valid_scores)
-      # test_evaluator = dc.utils.evaluate.GeneratorEvaluator(
+      # test_evaluator = dc.utilities.evaluate.GeneratorEvaluator(
       #   tg, feed_dict_generator(test_dataset, batch_size), transformers, [label])
       # test_scores = test_evaluator.compute_model_performance(metric)
       # test_scores = {"%s_test" % k: v for k, v in test_scores.items()}

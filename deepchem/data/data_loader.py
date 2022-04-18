@@ -292,7 +292,7 @@ class CSVLoader(DataLoader):
 
   >>> import tempfile
   >>> import deepchem as dc
-  >>> with dc.utils.UniversalNamedTemporaryFile(mode='w') as tmpfile:
+  >>> with dc.utilities.UniversalNamedTemporaryFile(mode='w') as tmpfile:
   ...   df.to_csv(tmpfile.name)
   ...   loader = dc.data.CSVLoader(["task1"], feature_field="smiles",
   ...                              featurizer=dc.feat.CircularFingerprint())
@@ -313,7 +313,7 @@ class CSVLoader(DataLoader):
 
   >>> x1, x2 = [2, 3, 4], [4, 6, 8]
   >>> df = pd.DataFrame({"x1":x1, "x2": x2}).reset_index()
-  >>> with dc.utils.UniversalNamedTemporaryFile(mode='w') as tmpfile:
+  >>> with dc.utilities.UniversalNamedTemporaryFile(mode='w') as tmpfile:
   ...   df.to_csv(tmpfile.name)
   ...   loader = dc.data.CSVLoader(tasks=[], id_field="index", feature_field=["x1", "x2"],
   ...                              featurizer=dc.feat.DummyFeaturizer())
@@ -448,7 +448,7 @@ class UserCSVLoader(CSVLoader):
   >>> import tempfile
   >>> import deepchem as dc
   >>> featurizer = dc.feat.UserDefinedFeaturizer(["desc1", "desc2"])
-  >>> with dc.utils.UniversalNamedTemporaryFile(mode='w') as tmpfile:
+  >>> with dc.utilities.UniversalNamedTemporaryFile(mode='w') as tmpfile:
   ...   df.to_csv(tmpfile.name)
   ...   loader = dc.data.UserCSVLoader(["task1"], id_field="id",
   ...                              featurizer=featurizer)
@@ -540,7 +540,7 @@ class JsonLoader(DataLoader):
 
   >>> import tempfile
   >>> import deepchem as dc
-  >>> with dc.utils.UniversalNamedTemporaryFile(mode='w') as tmpfile:
+  >>> with dc.utilities.UniversalNamedTemporaryFile(mode='w') as tmpfile:
   ...   df.to_json(tmpfile.name, orient='records', lines=True)
   ...   featurizer = dc.feat.ElementPropertyFingerprint()
   ...   loader = dc.data.JsonLoader(["task"], feature_field="composition", featurizer=featurizer)
@@ -751,7 +751,7 @@ class SDFLoader(DataLoader):
     self.featurizer = featurizer
     self.sanitize = sanitize
     self.tasks = tasks
-    # The field in which dc.utils.save.load_sdf_files stores RDKit mol objects
+    # The field in which dc.utilities.save.load_sdf_files stores RDKit mol objects
     self.mol_field = "mol"
     # The field in which load_sdf_files return value stores smiles
     self.id_field = "smiles"

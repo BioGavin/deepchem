@@ -190,7 +190,7 @@ class Model(object):
       metric function may also accept a keyword argument
       `sample_weight` to account for per-sample weights.
     transformers: List[Transformer]
-      List of `dc.trans.Transformer` objects. These transformations
+      List of `dc.trans.NLP` objects. These transformations
       must have been applied to `dataset` previously. The dataset will
       be untransformed for metric evaluation.
     per_task_metrics: bool, optional (default False)

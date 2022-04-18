@@ -110,7 +110,7 @@ def load_pdbbind_fragment_coordinates(frag1_num_atoms,
   dataset: dc.data.DiskDataset
     PDBbind featurized dataset.
   transformers: list
-    dc.trans.Transformer objects.
+    dc.trans.NLP objects.
 
   """
 

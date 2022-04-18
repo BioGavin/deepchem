@@ -1,5 +1,5 @@
 """
-Simple utils to save and load from disk.
+Simple utilities to save and load from disk.
 """
 import joblib
 import gzip
@@ -506,7 +506,7 @@ def load_from_disk(filename: str) -> Any:
 
 def load_dataset_from_disk(save_dir: str) -> Tuple[bool, Optional[Tuple[
     "dc.data.DiskDataset", "dc.data.DiskDataset", "dc.data.DiskDataset"]], List[
-        "dc.trans.Transformer"]]:
+        "dc.trans.NLP"]]:
   """Loads MoleculeNet train/valid/test/transformers from disk.
 
   Expects that data was saved using `save_dataset_to_disk` below. Expects the
@@ -532,7 +532,7 @@ def load_dataset_from_disk(save_dir: str) -> Tuple[bool, Optional[Tuple[
     Whether the load succeeded
   all_dataset: Tuple[DiskDataset, DiskDataset, DiskDataset]
     The train, valid, test datasets
-  transformers: Transformer
+  transformers: NLP
     The transformers used for this dataset
 
   See Also
@@ -558,7 +558,7 @@ def load_dataset_from_disk(save_dir: str) -> Tuple[bool, Optional[Tuple[
 
 def save_dataset_to_disk(
     save_dir: str, train: "dc.data.DiskDataset", valid: "dc.data.DiskDataset",
-    test: "dc.data.DiskDataset", transformers: List["dc.trans.Transformer"]):
+    test: "dc.data.DiskDataset", transformers: List["dc.trans.NLP"]):
   """Utility used by MoleculeNet to save train/valid/test datasets.
 
   This utility function saves a train/valid/test split of a dataset along
@@ -584,7 +584,7 @@ def save_dataset_to_disk(
     Validation dataset to save.
   test: DiskDataset
     Test dataset to save.
-  transformers: List[Transformer]
+  transformers: List[NLP]
     List of transformers to save to disk.
 
   See Also
@@ -600,14 +600,14 @@ def save_dataset_to_disk(
   save_transformers(save_dir, transformers)
 
 
-def load_transformers(save_dir: str) -> List["dc.trans.Transformer"]:
+def load_transformers(save_dir: str) -> List["dc.trans.NLP"]:
   """Load the transformers for a MoleculeNet dataset from disk."""
   with open(os.path.join(save_dir, "transformers.pkl"), 'rb') as f:
     return pickle.load(f)
 
 
 def save_transformers(save_dir: str,
-                      transformers: List["dc.trans.Transformer"]):
+                      transformers: List["dc.trans.NLP"]):
   """Save the transformers for a MoleculeNet dataset to disk."""
   with open(os.path.join(save_dir, "transformers.pkl"), 'wb') as f:
     pickle.dump(transformers, f)

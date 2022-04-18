@@ -17,7 +17,7 @@ on datasets: bace_c, bbbp, clintox, hiv, muv, pcba, sider, tox21, toxcast
 
 Giving regression performances of:
     MultitaskDNN(tf_regression),
-    Fit Transformer MultitaskDNN(tf_regression_ft),
+    Fit NLP MultitaskDNN(tf_regression_ft),
     Random forest(rf_regression),
     Graph convolution regression(graphconvreg),
     xgboost(xgb_regression), Deep tensor neural net(dtnn),

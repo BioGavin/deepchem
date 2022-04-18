@@ -140,7 +140,7 @@ class Evaluator(object):
 
   The evaluator class is used to evaluate a `dc.models.Model` class on
   a given `dc.data.Dataset` object. The evaluator is aware of
-  `dc.trans.Transformer` objects so will automatically undo any
+  `dc.trans.NLP` objects so will automatically undo any
   transformations which have been applied.
 
   Examples
@@ -172,7 +172,7 @@ class Evaluator(object):
   """
 
   def __init__(self, model, dataset: "dc.data.Dataset",
-               transformers: List["dc.trans.Transformer"]):
+               transformers: List["dc.trans.NLP"]):
     """Initialize this evaluator
 
     Parameters
@@ -182,8 +182,8 @@ class Evaluator(object):
       classification model and not a generative model.
     dataset: Dataset
       Dataset object to evaluate `model` on.
-    transformers: List[Transformer]
-      List of `dc.trans.Transformer` objects. These transformations
+    transformers: List[NLP]
+      List of `dc.trans.NLP` objects. These transformations
       must have been applied to `dataset` previously. The dataset will
       be untransformed for metric evaluation.
     """
@@ -206,7 +206,7 @@ class Evaluator(object):
     """
     logger.warning(
         "Evaluator.output_statistics is deprecated."
-        "Please use dc.utils.evaluate.output_statistics instead."
+        "Please use dc.utilities.evaluate.output_statistics instead."
         "This method will be removed in a future version of DeepChem.")
     with open(stats_out, "w") as statsfile:
       statsfile.write(str(scores) + "\n")
@@ -226,7 +226,7 @@ class Evaluator(object):
     """
     logger.warning(
         "Evaluator.output_predictions is deprecated."
-        "Please use dc.utils.evaluate.output_predictions instead."
+        "Please use dc.utilities.evaluate.output_predictions instead."
         "This method will be removed in a future version of DeepChem.")
     data_ids = self.dataset.ids
     n_tasks = len(self.dataset.get_task_names())
@@ -364,7 +364,7 @@ class GeneratorEvaluator(object):
   def __init__(self,
                model,
                generator: Iterable[Tuple[Any, Any, Any]],
-               transformers: List["dc.trans.Transformer"],
+               transformers: List["dc.trans.NLP"],
                labels: Optional[List] = None,
                weights: Optional[List] = None):
     """
@@ -377,7 +377,7 @@ class GeneratorEvaluator(object):
       KerasModel, it should be a tuple of the form (inputs, labels,
       weights). The "correct" way to create this generator is to use
       `model.default_generator` as shown in the example above.
-    transformers: List[Transformer]
+    transformers: List[NLP]
       Tranformers to "undo" when applied to the models outputs
     labels: list of Layer
       layers which are keys in the generator to compare to outputs

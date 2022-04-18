@@ -2,7 +2,7 @@
 
 # metric class
 from deepchem.metrics.metric import Metric
-# metrics utils
+# metrics utilities
 from deepchem.metrics.metric import threshold_predictions
 from deepchem.metrics.metric import normalize_weight_shape
 from deepchem.metrics.metric import normalize_labels_shape

@@ -9,7 +9,7 @@ from dataclasses import dataclass
 @dataclass
 class MATEncoding:
   """
-  Dataclass specific to the Molecular Attention Transformer [1]_.
+  Dataclass specific to the Molecular Attention NLP [1]_.
 
   This dataclass class wraps around three different matrices for a given molecule: Node Features, Adjacency Matrix, and the Distance Matrix.
 
@@ -29,7 +29,7 @@ class MATEncoding:
 
 class MATFeaturizer(MolecularFeaturizer):
   """
-  This class is a featurizer for the Molecule Attention Transformer [1]_.
+  This class is a featurizer for the Molecule Attention NLP [1]_.
   The returned value is a numpy array which consists of molecular graph descriptions:
     - Node Features
     - Adjacency Matrix
@@ -37,7 +37,7 @@ class MATFeaturizer(MolecularFeaturizer):
 
   References
   ---------
-  .. [1] Lukasz Maziarka et al. "Molecule Attention Transformer`<https://arxiv.org/abs/2002.08264>`"
+  .. [1] Lukasz Maziarka et al. "Molecule Attention NLP`<https://arxiv.org/abs/2002.08264>`"
 
   Examples
   --------

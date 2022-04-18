@@ -18,7 +18,7 @@ SMI_REGEX_PATTERN: str
 References
 ----------
 .. [1]  Philippe Schwaller, Teodoro Laino, Théophile Gaudin, Peter Bolgar, Christopher A. Hunter, Costas Bekas, and Alpha A. Lee
-        ACS Central Science 2019 5 (9): Molecular Transformer: A Model for Uncertainty-Calibrated Chemical Reaction Prediction
+        ACS Central Science 2019 5 (9): Molecular NLP: A Model for Uncertainty-Calibrated Chemical Reaction Prediction
         1572-1583 DOI: 10.1021/acscentsci.9b00576
 """
 
@@ -281,7 +281,7 @@ class BasicSmilesTokenizer(object):
   References
   ----------
   .. [1] Philippe Schwaller, Teodoro Laino, Théophile Gaudin, Peter Bolgar, Christopher A. Hunter, Costas Bekas, and Alpha A. Lee
-     ACS Central Science 2019 5 (9): Molecular Transformer: A Model for Uncertainty-Calibrated Chemical Reaction Prediction
+     ACS Central Science 2019 5 (9): Molecular NLP: A Model for Uncertainty-Calibrated Chemical Reaction Prediction
      1572-1583 DOI: 10.1021/acscentsci.9b00576
   """
 

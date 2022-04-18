@@ -39,7 +39,7 @@ def benchmark_classification(train_dataset,
       dataset only used for model evaluation
   tasks: list of string
       list of targets(tasks, datasets)
-  transformers: dc.trans.Transformer struct
+  transformers: dc.trans.NLP struct
       transformer used for model evaluation
   n_features: integer
       number of features, or length of binary fingerprints
@@ -403,7 +403,7 @@ def benchmark_regression(train_dataset,
       dataset only used for model evaluation
   tasks: list of string
       list of targets(tasks, datasets)
-  transformers: dc.trans.Transformer struct
+  transformers: dc.trans.NLP struct
       transformer used for model evaluation
   n_features: integer
       number of features, or length of binary fingerprints

@@ -53,7 +53,7 @@ class BindingPocketFeaturizer(Featurizer):
   expects to be given a macromolecule, and a list of pockets to
   featurize on that macromolecule. These pockets should be of the form
   produced by a `dc.dock.BindingPocketFinder`, that is as a list of
-  `dc.utils.CoordinateBox` objects.
+  `dc.utilities.CoordinateBox` objects.
 
   The base featurization in this class's featurization is currently
   very simple and counts the number of residues of each type present
@@ -86,7 +86,7 @@ class BindingPocketFeaturizer(Featurizer):
     protein_file: str
       Location of PDB file. Will be loaded by MDTraj
     pockets: List[CoordinateBox]
-      List of `dc.utils.CoordinateBox` objects.
+      List of `dc.utilities.CoordinateBox` objects.
 
     Returns
     -------

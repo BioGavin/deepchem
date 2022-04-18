@@ -552,7 +552,7 @@ class TensorflowGraphModel(Model):
   #  metric: deepchem.metrics.Metric
   #    Evaluation metric
   #  transformers: list
-  #    List of deepchem.transformers.Transformer
+  #    List of deepchem.transformers.NLP
 
   #  Returns
   #  -------

@@ -22,7 +22,7 @@ class ScaleNorm(nn.Module):
 
   References
   ----------
-  .. [1] Lukasz Maziarka et al. "Molecule Attention Transformer" Graph Representation Learning workshop and Machine Learning and the Physical Sciences workshop at NeurIPS 2019. 2020. https://arxiv.org/abs/2002.08264
+  .. [1] Lukasz Maziarka et al. "Molecule Attention NLP" Graph Representation Learning workshop and Machine Learning and the Physical Sciences workshop at NeurIPS 2019. 2020. https://arxiv.org/abs/2002.08264
 
   Examples
   --------
@@ -53,14 +53,14 @@ class ScaleNorm(nn.Module):
 
 
 class MultiHeadedMATAttention(nn.Module):
-  """First constructs an attention layer tailored to the Molecular Attention Transformer [1]_ and then converts it into Multi-Headed Attention.
+  """First constructs an attention layer tailored to the Molecular Attention NLP [1]_ and then converts it into Multi-Headed Attention.
 
   In Multi-Headed attention the attention mechanism multiple times parallely through the multiple attention heads.
   Thus, different subsequences of a given sequences can be processed differently.
   The query, key and value parameters are split multiple ways and each split is passed separately through a different attention head.
   References
   ----------
-  .. [1] Lukasz Maziarka et al. "Molecule Attention Transformer" Graph Representation Learning workshop and Machine Learning and the Physical Sciences workshop at NeurIPS 2019. 2020. https://arxiv.org/abs/2002.08264
+  .. [1] Lukasz Maziarka et al. "Molecule Attention NLP" Graph Representation Learning workshop and Machine Learning and the Physical Sciences workshop at NeurIPS 2019. 2020. https://arxiv.org/abs/2002.08264
   Examples
   --------
   >>> from deepchem.models.torch_models.layers import MultiHeadedMATAttention, MATEmbedding
@@ -237,14 +237,14 @@ class MultiHeadedMATAttention(nn.Module):
 
 
 class MATEncoderLayer(nn.Module):
-  """Encoder layer for use in the Molecular Attention Transformer [1]_.
+  """Encoder layer for use in the Molecular Attention NLP [1]_.
 
   The MATEncoder layer primarily consists of a self-attention layer (MultiHeadedMATAttention) and a feed-forward layer (PositionwiseFeedForward).
   This layer can be stacked multiple times to form an encoder.
 
   References
   ----------
-  .. [1] Lukasz Maziarka et al. "Molecule Attention Transformer" Graph Representation Learning workshop and Machine Learning and the Physical Sciences workshop at NeurIPS 2019. 2020. https://arxiv.org/abs/2002.08264
+  .. [1] Lukasz Maziarka et al. "Molecule Attention NLP" Graph Representation Learning workshop and Machine Learning and the Physical Sciences workshop at NeurIPS 2019. 2020. https://arxiv.org/abs/2002.08264
 
   Examples
   --------
@@ -364,14 +364,14 @@ class MATEncoderLayer(nn.Module):
 
 
 class SublayerConnection(nn.Module):
-  """SublayerConnection layer which establishes a residual connection, as used in the Molecular Attention Transformer [1]_.
+  """SublayerConnection layer which establishes a residual connection, as used in the Molecular Attention NLP [1]_.
 
   The SublayerConnection layer is a residual layer which is then passed through Layer Normalization.
   The residual connection is established by computing the dropout-adjusted layer output of a normalized tensor and adding this to the original input tensor.
 
   References
   ----------
-  .. [1] Lukasz Maziarka et al. "Molecule Attention Transformer" Graph Representation Learning workshop and Machine Learning and the Physical Sciences workshop at NeurIPS 2019. 2020. https://arxiv.org/abs/2002.08264
+  .. [1] Lukasz Maziarka et al. "Molecule Attention NLP" Graph Representation Learning workshop and Machine Learning and the Physical Sciences workshop at NeurIPS 2019. 2020. https://arxiv.org/abs/2002.08264
 
   Examples
   --------
@@ -415,14 +415,14 @@ class SublayerConnection(nn.Module):
 
 
 class PositionwiseFeedForward(nn.Module):
-  """PositionwiseFeedForward is a layer used to define the position-wise feed-forward (FFN) algorithm for the Molecular Attention Transformer [1]_
+  """PositionwiseFeedForward is a layer used to define the position-wise feed-forward (FFN) algorithm for the Molecular Attention NLP [1]_
 
   Each layer in the MAT encoder contains a fully connected feed-forward network which applies two linear transformations and the given activation function.
   This is done in addition to the SublayerConnection module.
 
   References
   ----------
-  .. [1] Lukasz Maziarka et al. "Molecule Attention Transformer" Graph Representation Learning workshop and Machine Learning and the Physical Sciences workshop at NeurIPS 2019. 2020. https://arxiv.org/abs/2002.08264
+  .. [1] Lukasz Maziarka et al. "Molecule Attention NLP" Graph Representation Learning workshop and Machine Learning and the Physical Sciences workshop at NeurIPS 2019. 2020. https://arxiv.org/abs/2002.08264
 
   Examples
   --------
@@ -524,7 +524,7 @@ class MATEmbedding(nn.Module):
 
   References
   ----------
-  .. [1] Lukasz Maziarka et al. "Molecule Attention Transformer" Graph Representation Learning workshop and Machine Learning and the Physical Sciences workshop at NeurIPS 2019. 2020. https://arxiv.org/abs/2002.08264
+  .. [1] Lukasz Maziarka et al. "Molecule Attention NLP" Graph Representation Learning workshop and Machine Learning and the Physical Sciences workshop at NeurIPS 2019. 2020. https://arxiv.org/abs/2002.08264
 
   Examples
   --------
@@ -565,14 +565,14 @@ class MATEmbedding(nn.Module):
 
 
 class MATGenerator(nn.Module):
-  """MATGenerator defines the linear and softmax generator step for the Molecular Attention Transformer [1]_.
+  """MATGenerator defines the linear and softmax generator step for the Molecular Attention NLP [1]_.
 
   In the MATGenerator, a Generator is defined which performs the Linear + Softmax generation step.
   Depending on the type of aggregation selected, the attention output layer performs different operations.
 
   References
   ----------
-  .. [1] Lukasz Maziarka et al. "Molecule Attention Transformer" Graph Representation Learning workshop and Machine Learning and the Physical Sciences workshop at NeurIPS 2019. 2020. https://arxiv.org/abs/2002.08264
+  .. [1] Lukasz Maziarka et al. "Molecule Attention NLP" Graph Representation Learning workshop and Machine Learning and the Physical Sciences workshop at NeurIPS 2019. 2020. https://arxiv.org/abs/2002.08264
 
   Examples
   --------

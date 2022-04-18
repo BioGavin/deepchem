@@ -25,7 +25,7 @@ class TestRdkitUtil(unittest.TestCase):
     assert len(complexes) == 2
 
   def test_load_molecule(self):
-    # adding hydrogens and charges is tested in dc.utils
+    # adding hydrogens and charges is tested in dc.utilities
     from rdkit.Chem.AllChem import Mol
     for add_hydrogens in (True, False):
       for calc_charges in (True, False):

@@ -45,7 +45,7 @@ class Pagtn(nn.Module):
   References
   ----------
   .. [1] Benson Chen, Regina Barzilay, Tommi Jaakkola. "Path-Augmented
-         Graph Transformer Network." arXiv:1905.12712
+         Graph NLP Network." arXiv:1905.12712
 
   Notes
   -----
@@ -213,7 +213,7 @@ class PagtnModel(TorchModel):
   References
   ----------
   .. [1] Benson Chen, Regina Barzilay, Tommi Jaakkola. "Path-Augmented
-         Graph Transformer Network." arXiv:1905.12712
+         Graph NLP Network." arXiv:1905.12712
 
   Notes
   -----

@@ -70,7 +70,7 @@ def load_freesolv(
 
   References
   ----------
-  .. [1] Łukasz Maziarka, et al. "Molecule Attention Transformer." NeurIPS 2019
+  .. [1] Łukasz Maziarka, et al. "Molecule Attention NLP." NeurIPS 2019
      arXiv:2002.08264v1 [cs.LG].
   .. [2] Mobley DL, Guthrie JP. FreeSolv:
      a database of experimental and calculated hydration free energies, with input files.

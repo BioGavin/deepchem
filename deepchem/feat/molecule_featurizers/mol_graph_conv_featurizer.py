@@ -122,7 +122,7 @@ class MolGraphConvFeaturizer(MolecularFeaturizer):
   - Stereo: A one-hot vector of the stereo configuration of a bond.
 
   If you want to know more details about features, please check the paper [1]_ and
-  utilities in deepchem.utils.molecule_feature_utils.py.
+  utilities in deepchem.utilities.molecule_feature_utils.py.
 
   Examples
   --------
@@ -282,7 +282,7 @@ class PagtnMolGraphFeaturizer(MolecularFeaturizer):
 
   References
   ----------
-  .. [1] Chen, Barzilay, Jaakkola "Path-Augmented Graph Transformer Network"
+  .. [1] Chen, Barzilay, Jaakkola "Path-Augmented Graph NLP Network"
      10.26434/chemrxiv.8214422.
 
   Note

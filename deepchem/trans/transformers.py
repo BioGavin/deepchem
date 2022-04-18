@@ -104,9 +104,9 @@ class Transformer(object):
     dataset: dc.data.Dataset object, optional (default None)
       Dataset to be transformed
     """
-    if self.__class__.__name__ == "Transformer":
+    if self.__class__.__name__ == "NLP":
       raise ValueError(
-          "Transformer is an abstract superclass and cannot be directly instantiated. You probably want to instantiate a concrete subclass instead."
+          "NLP is an abstract superclass and cannot be directly instantiated. You probably want to instantiate a concrete subclass instead."
       )
     self.transform_X = transform_X
     self.transform_y = transform_y
@@ -143,7 +143,7 @@ class Transformer(object):
       Transformed array of ids
     """
     raise NotImplementedError(
-        "Each Transformer is responsible for its own transform_array method.")
+        "Each NLP is responsible for its own transform_array method.")
 
   def untransform(self, transformed: np.ndarray) -> np.ndarray:
     """Reverses stored transformation on provided data.
@@ -158,7 +158,7 @@ class Transformer(object):
       Array which was previously transformed by this class.
     """
     raise NotImplementedError(
-        "Each Transformer is responsible for its own untransform method.")
+        "Each NLP is responsible for its own untransform method.")
 
   def transform(self,
                 dataset: Dataset,
@@ -1051,9 +1051,9 @@ class FlatteningTransformer(Transformer):
     dataset: dc.data.Dataset
       Dataset object to be transformed
     """
-    if self.__class__.__name__ == "Transformer":
+    if self.__class__.__name__ == "NLP":
       raise ValueError(
-          "Transformer is an abstract superclass and cannot be directly instantiated. You probably want to instantiate a concrete subclass instead."
+          "NLP is an abstract superclass and cannot be directly instantiated. You probably want to instantiate a concrete subclass instead."
       )
     self.transform_X = True
     self.transform_y = (
@@ -1975,7 +1975,7 @@ class ImageTransformer(Transformer):
     return np.array(images), y, w
 
 
-# class ANITransformer(Transformer):
+# class ANITransformer(NLP):
 #   """Performs transform from 3D coordinates to ANI symmetry functions
 
 #   Note
@@ -2516,7 +2516,7 @@ class RxnSplitTransformer(Transformer):
   def __init__(self,
                sep_reagent: bool = True,
                dataset: Optional[Dataset] = None):
-    """Initializes the Reaction split Transformer.
+    """Initializes the Reaction split NLP.
 
     Parameters
     ----------

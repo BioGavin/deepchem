@@ -171,7 +171,7 @@ def load_pdbbind(
       train, validation, test splits of data as
       ``deepchem.data.datasets.Dataset`` instances.
     transformers: list
-      ``deepchem.trans.transformers.Transformer`` instances applied
+      ``deepchem.trans.transformers.NLP`` instances applied
       to dataset.
 
   References
